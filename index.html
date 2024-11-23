@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+
+    <!-- Font Awesome script -->
+    <script src="https://kit.fontawesome.com/7bf271c8b2.js" crossorigin="anonymous"></script>
+
+    <!-- daisyUI 4.12.12 CSS file + Tailwind CSS CDN script -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lato: ["Lato", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="font-lato">
+    <header>
+        <!-- Navbar -->
+        <nav class="relative mx-auto flex w-11/12 max-w-[1320px] items-center justify-between py-6 md:py-8 lg:py-10">
+            <button onclick="toggleSidebar()" id="menuBtn" class="text-[#131313] sm:hidden">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div
+                class="absolute left-1/2 flex -translate-x-1/2 transform items-center justify-center gap-3 sm:relative sm:left-auto sm:transform-none">
+                <img class="h-6" src="./images/logo.svg" alt="Peddy logo" />
+                <h3 class="text-3xl font-black text-[#131313]">Peddy</h3>
+            </div>
+            <ul
+                class="absolute left-1/2 hidden -translate-x-1/2 transform items-center justify-center gap-8 text-[#131313] sm:flex">
+                <li><a href="" class="hover:text-[#0E7A81]">Home</a></li>
+                <li><a href="" class="hover:text-[#0E7A81]">Shop</a></li>
+                <li><a href="" class="hover:text-[#0E7A81]">Contact</a></li>
+            </ul>
+            <div
+                class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[#0E7A8133] p-2 hover:bg-[#0E7A8133] md:h-12 md:w-12">
+                <img class="h-full w-full" src="./images/profile.svg" alt="" />
+            </div>
+            <aside id="sidebar"
+                class="fixed left-0 top-0 z-10 hidden h-screen w-48 bg-white/10 p-10 shadow-md backdrop-blur-md">
+                <button onclick="toggleSidebar()" class="absolute right-5 top-5">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <ul class="mt-4 space-y-4 text-[#131313]">
+                    <li>
+                        <a href="#home" class="hover:text-[#0E7A81]" onclick="toggleSidebar()">Home</a>
+                    </li>
+                    <li>
+                        <a href="#shop" class="hover:text-[#0E7A81]" onclick="toggleSidebar()">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-[#0E7A81]" onclick="toggleSidebar()">Contact</a>
+                    </li>
+                </ul>
+            </aside>
+        </nav>
+        <!--Banner section -->
+        <section class="mx-auto mt-4 w-11/12 max-w-[1320px]">
+            <div class="mx-auto max-w-screen-md text-center">
+                <h4
+                    class="mb-3 text-center font-bold text-[#13131399] sm:mb-4 sm:text-lg md:mb-5 md:text-xl lg:mb-6 lg:text-2xl">
+                    Bringing Families Together ❤️‍🔥
+                </h4>
+                <h1
+                    class="mx-auto mb-3 text-center text-4xl font-black text-[#131313] sm:mb-4 sm:text-5xl md:mb-5 md:text-6xl lg:mb-6 lg:text-7xl">
+                    Your Path to Adoption Starts Here
+                </h1>
+                <p class="mx-auto mb-5 text-center text-[#131313] sm:mb-6 md:mb-7 lg:mb-8">
+                    At Peddy, we connect loving families with their perfect furry
+                    companions. If you are looking to adopt, we're here to make it easy,
+                    safe, and enjoyable.
+                </p>
+                <a href="#adopt"
+                    class="mb-8 inline-block transform rounded-xl bg-[#0E7A81] px-4 py-2 font-bold text-white transition duration-150 ease-in-out active:scale-95 md:mb-10 md:px-6 md:py-3 lg:mb-12 lg:px-8 lg:py-4">View
+                    More</a>
+                <img src="./images/pet.jpg" alt="" class="w-full" />
+            </div>
+        </section>
+    </header>
+
+    <main class="mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+        <!-- Adopt section -->
+        <section id="adopt" class="mx-auto w-11/12 max-w-[1320px] scroll-mt-8">
+            <div class="mx-auto max-w-screen-md text-center">
+                <h2 class="mb-4 text-2xl font-black text-[#131313] md:mb-5 md:text-3xl lg:mb-6 lg:text-4xl">
+                    Adopt Your Best Friend
+                </h2>
+                <p class="mb-8 text-[#131313B2] md:mb-10 lg:mb-12">
+                    Here you'll find a variety of pets, each ready to become a cherished
+                    part of your family. Browse through the profiles to find your
+                    perfect match and make an adoption that changes lives.
+                </p>
+            </div>
+
+            <div id="categories" class="grid grid-cols-2 gap-6 lg:grid-cols-4"></div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 py-4 md:py-6 lg:py-8">
+                <h3 class="text-lg font-black text-[#131313] md:text-xl lg:text-2xl">
+                    Best Deal For You
+                </h3>
+                <button onclick="sortByPrice()"
+                    class="transform text-nowrap rounded-xl bg-[#0E7A81] px-4 py-2 font-bold text-white transition duration-150 ease-in-out active:scale-95 md:px-6 md:py-3 lg:px-8 lg:py-4">
+                    Sort by Price
+                </button>
+            </div>
+
+            <div class="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:mb-8 lg:grid-cols-4">
+                <div id="loading" class="col-span-1 hidden md:col-span-2 lg:col-span-3">
+                    <div class="flex min-h-24 items-center justify-center sm:h-full">
+                        <span class="loading loading-bars loading-lg"></span>
+                    </div>
+                </div>
+                <div id="pets-container" class="col-span-1 md:col-span-2 lg:col-span-3">
+                    <div id="pets" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+                </div>
+
+                <div id="liked"
+                    class="col-span-1 grid min-h-24 grid-cols-2 content-start gap-6 rounded-xl border p-5 sm:h-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <section id="modal" class="z-5 fixed left-0 top-0 hidden h-screen w-full bg-[#13131399]"></section>
+        <section id="timeModal" class="z-5 fixed left-0 top-0 hidden h-screen w-full bg-[#13131399]">
+            <div class="flex h-full w-full items-center justify-center">
+                <div
+                    class="mx-auto max-h-[90vh] w-11/12 max-w-96 overflow-y-auto overscroll-none rounded-xl bg-white p-8 text-center">
+                    <img src="./images/logo.svg" alt="" class="mx-auto mb-3" />
+                    <h3 class="mb-3 text-xl font-bold text-[#131313] md:text-2xl lg:text-3xl">
+                        Congrates!
+                    </h3>
+                    <p class="mb-3 text-sm text-[#131313B2] md:text-base">
+                        Adoption Process Is Start For Your Pet.
+                    </p>
+                    <p id="countdown" class="text-xl font-bold text-[#131313] md:text-2xl lg:text-3xl">
+                        3
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#131313] py-8 md:py-16 lg:py-24">
+        <div class="mx-auto grid w-11/12 max-w-[1320px] grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <div>
+                <div class="mb-4 flex items-center gap-3 md:mb-5 lg:mb-6">
+                    <img class="h-6" src="./images/logo.svg" alt="Peddy logo" />
+                    <h3 class="text-3xl font-black text-white">Peddy</h3>
+                </div>
+                <ul class="mb-4 text-[#FFFFFFE5] md:mb-5 lg:mb-6">
+                    <li>Location: av. Washington 165, NY CA 54003</li>
+                    <li>Phone: +31 85 964 47 25</li>
+                    <li>Email: info@yourdomain.com</li>
+                    <li>Openings hours: 9.00 AM - 5.00 PM</li>
+                </ul>
+                <ul class="flex items-center gap-6">
+                    <li>
+                        <a href=""><img src="./images/facebook.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/x.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/youtube.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/instagram.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:justify-self-center">
+                <h3 class="mb-4 text-lg font-bold text-white md:mb-6 lg:mb-8">
+                    Useful Links
+                </h3>
+                <ul class="text-[#FFFFFF99]">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Animals</a></li>
+                    <li><a href="">Foundation</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <div class="lg:justify-self-end">
+                <h3 class="mb-4 text-lg font-bold text-white md:mb-6 lg:mb-8">
+                    Drop a Message
+                </h3>
+                <form action="" class="space-y-4">
+                    <input type="text" placeholder="Enter your email"
+                        class="block w-full max-w-60 rounded-xl bg-[#FFFFFF0D] px-4 py-3" />
+                    <button href="#adopt"
+                        class="w-full max-w-60 rounded-xl bg-[#0E7A81] px-4 py-3 font-bold text-white">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
