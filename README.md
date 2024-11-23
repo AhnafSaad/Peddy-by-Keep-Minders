@@ -19,6 +19,6 @@ Peddy is a pet adoption website built using HTML, Tailwind CSS and JavaScript. T
 - for/of Loop
 - Array Methods
 
-- # Live Page Link
+# Live Page Link
 -  https://ahnafsaad.github.io/Peddy-by-Keep-Minders/
 
